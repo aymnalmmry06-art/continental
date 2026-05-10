@@ -8,266 +8,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <style>
-      :root {
-        --primary: #4f7cff;
-        --bg: #0f1b4d;
-        --danger: #ff4d4d;
-        --success: #2ecc71;
-        --accent: #f8f9fa;
-      }
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #f0f2f5 0%, #dfe9f3 100%);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-        margin: 0;
-        min-height: 100vh;
-      }
-
-      /* تنسيق الشعار والهيدر */
-      .brand-header {
-        text-align: center;
-        margin-bottom: 25px;
-      }
-      .brand-logo {
-        width: 90px;
-        height: 90px;
-        background: white;
-        border-radius: 22px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 15px;
-        overflow: hidden;
-        box-shadow: 0 10px 20px rgba(15, 27, 77, 0.15);
-        border: 2px solid #fff;
-      }
-      .brand-logo img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-      .brand-name {
-        font-size: 20px;
-        font-weight: 800;
-        color: var(--bg);
-        margin: 0;
-        letter-spacing: 0.5px;
-        max-width: 400px;
-        line-height: 1.4;
-      }
-      .admin-title {
-        font-size: 15px;
-        color: var(--primary);
-        font-weight: 600;
-        margin-top: 8px;
-        background: rgba(79, 124, 255, 0.1);
-        display: inline-block;
-        padding: 4px 20px;
-        border-radius: 50px;
-      }
-
-      .container {
-        width: 100%;
-        max-width: 550px;
-      }
-      .card {
-        background: white;
-        padding: 25px;
-        border-radius: 24px;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-        margin-bottom: 30px;
-        border: 1px solid rgba(255, 255, 255, 0.8);
-      }
-      h2 {
-        color: var(--bg);
-        text-align: center;
-        margin-top: 0;
-        font-size: 1.4rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        margin-bottom: 25px;
-      }
-      .form-group {
-        margin-bottom: 20px;
-      }
-      label {
-        display: block;
-        margin-bottom: 8px;
-        font-weight: 600;
-        color: #555;
-        font-size: 0.9rem;
-      }
-      input,
-      textarea,
-      select {
-        width: 100%;
-        padding: 14px;
-        border: 2px solid #f0f1f4;
-        border-radius: 15px;
-        box-sizing: border-box;
-        outline: none;
-        transition: 0.3s;
-        font-family: inherit;
-        background: #fcfcfc;
-      }
-      input:focus,
-      textarea:focus {
-        border-color: var(--primary);
-        background: white;
-        box-shadow: 0 0 0 4px rgba(79, 124, 255, 0.1);
-      }
-      .upload-area {
-        border: 2px dashed #d1d5db;
-        padding: 30px 20px;
-        text-align: center;
-        border-radius: 18px;
-        cursor: pointer;
-        transition: 0.3s;
-        background: #fafafa;
-      }
-      .upload-area:hover {
-        border-color: var(--primary);
-        background: #f4f7ff;
-      }
-      #imagePreview {
-        max-width: 100%;
-        height: 180px;
-        object-fit: cover;
-        border-radius: 14px;
-        margin-top: 15px;
-        display: none;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-      .btn-publish {
-        width: 100%;
-        padding: 16px;
-        background: var(--primary);
-        color: white;
-        border: none;
-        border-radius: 15px;
-        font-size: 17px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: 0.4s;
-        margin-top: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        box-shadow: 0 8px 20px rgba(79, 124, 255, 0.3);
-      }
-      .btn-publish:hover {
-        background: #3a63d8;
-        transform: translateY(-3px);
-      }
-
-      /* إدارة المنشورات */
-      .news-item {
-        background: white;
-        padding: 15px;
-        border-radius: 18px;
-        margin-bottom: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border: 1px solid rgba(0, 0, 0, 0.03);
-      }
-      .news-info {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        overflow: hidden;
-      }
-      .news-info img {
-        width: 55px;
-        height: 55px;
-        border-radius: 12px;
-        object-fit: cover;
-        background: #f0f0f0;
-      }
-      .news-info span {
-        font-weight: 700;
-        color: var(--bg);
-        font-size: 1rem;
-      }
-
-      /* --- تحديث الأيقونة البرمجية الفخمة --- */
-      .delete-btn {
-        background: #fff0f0;
-        border: none;
-        width: 45px;
-        height: 45px;
-        border-radius: 14px;
-        cursor: pointer;
-        transition: 0.3s;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .trash-icon {
-        width: 14px;
-        height: 16px;
-        border: 2px solid var(--danger);
-        border-bottom-left-radius: 3px;
-        border-bottom-right-radius: 3px;
-        position: relative;
-        margin-top: 4px;
-        transition: 0.3s;
-      }
-      .trash-icon::before {
-        content: "";
-        position: absolute;
-        top: -5px;
-        left: -2px;
-        width: 18px;
-        height: 2px;
-        background: var(--danger);
-        border-radius: 2px;
-        transition: 0.3s;
-      }
-      .trash-icon::after {
-        content: "";
-        position: absolute;
-        top: -8px;
-        left: 3px;
-        width: 8px;
-        height: 3px;
-        border: 2px solid var(--danger);
-        border-bottom: none;
-        border-top-left-radius: 2px;
-        border-top-right-radius: 2px;
-        transition: 0.3s;
-      }
-      .delete-btn:hover {
-        background: var(--danger);
-      }
-      .delete-btn:hover .trash-icon,
-      .delete-btn:hover .trash-icon::before,
-      .delete-btn:hover .trash-icon::after {
-        border-color: white;
-        background: white;
-      }
-      .delete-btn:hover .trash-icon::before {
-        transform: translateY(-2px) rotate(-5deg);
-      }
-      /* -------------------------------------- */
-
-      #status {
-        text-align: center;
-        padding: 14px;
-        border-radius: 12px;
-        margin-top: 15px;
-        font-size: 14px;
-        display: none;
-        font-weight: bold;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="brand-header">
@@ -305,39 +46,20 @@
             type="file"
             id="fileInput"
             accept="image/*"
-            style="display: none"
-            onchange="processImage(event)"
+            class="file-input"
           />
           <div
             class="upload-area"
-            onclick="document.getElementById('fileInput').click()"
+            id="uploadArea"
           >
-            <i
-              class="fas fa-cloud-upload-alt"
-              style="
-                font-size: 32px;
-                color: var(--primary);
-                margin-bottom: 10px;
-              "
-            ></i>
+            <i class="fas fa-cloud-upload-alt upload-icon"></i>
             <div id="uploadText">اضغط لاختيار صورة من جهازك</div>
             <center><img id="imagePreview" /></center>
           </div>
           <button
             type="button"
-            onclick="clearImage()"
             id="removeImgBtn"
-            style="
-              display: none;
-              background: none;
-              border: none;
-              color: var(--danger);
-              cursor: pointer;
-              font-size: 13px;
-              margin-top: 8px;
-              width: 100%;
-              font-weight: bold;
-            "
+            class="remove-img-btn"
           >
             إلغاء الصورة ✕
           </button>
@@ -350,134 +72,24 @@
             placeholder="اكتب تفاصيل الخبر هنا..."
           ></textarea>
         </div>
-        <button class="btn-publish" id="publishBtn" onclick="publishNews()">
+        <button class="btn-publish" id="publishBtn">
           <i class="fas fa-paper-plane"></i> نشر الآن
         </button>
         <div id="status"></div>
       </div>
 
       <div id="manageSection">
-        <h3 style="text-align: center; color: var(--bg); margin-bottom: 20px">
+        <h3 class="manage-title">
           <i class="fas fa-list-check"></i> السجل الحالي للمنشورات
         </h3>
         <div id="newsList">
-          <p style="text-align: center; opacity: 0.5">جاري تحميل الأخبار...</p>
+          <p class="empty-message">جاري تحميل الأخبار...</p>
         </div>
       </div>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-
-    <script>
-      const firebaseConfig = {
-        databaseURL: "https://continental-f76a8-default-rtdb.firebaseio.com",
-      };
-      firebase.initializeApp(firebaseConfig);
-      const database = firebase.database();
-
-      let finalImageData = "";
-
-      function processImage(event) {
-        const file = event.target.files[0];
-        if (!file) return;
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          finalImageData = e.target.result;
-          const preview = document.getElementById("imagePreview");
-          preview.src = finalImageData;
-          preview.style.display = "block";
-          document.getElementById("uploadText").style.display = "none";
-          document.getElementById("removeImgBtn").style.display = "block";
-        };
-        reader.readAsDataURL(file);
-      }
-
-      function clearImage() {
-        finalImageData = "";
-        document.getElementById("fileInput").value = "";
-        document.getElementById("imagePreview").style.display = "none";
-        document.getElementById("uploadText").style.display = "block";
-        document.getElementById("removeImgBtn").style.display = "none";
-      }
-
-      async function publishNews() {
-        const title = document.getElementById("newsTitle").value;
-        const content = document.getElementById("newsContent").value;
-        const btn = document.getElementById("publishBtn");
-        if (!title || !content) {
-          alert("يرجى إدخال العنوان والمحتوى!");
-          return;
-        }
-        btn.disabled = true;
-        showStatus("جاري النشر...", "var(--primary)");
-        try {
-          await database.ref("news").push({
-            title: title,
-            content: content,
-            type: document.getElementById("newsType").value,
-            img:
-              finalImageData ||
-              "https://via.placeholder.com/600x400?text=Continental",
-            date: new Date().toLocaleDateString("en-GB"),
-            timestamp: Date.now(),
-          });
-          showStatus("✅ تم النشر!", "var(--success)");
-          document.getElementById("newsTitle").value = "";
-          document.getElementById("newsContent").value = "";
-          clearImage();
-          btn.disabled = false;
-        } catch (error) {
-          btn.disabled = false;
-        }
-      }
-
-      function showStatus(text, color) {
-        const status = document.getElementById("status");
-        status.innerText = text;
-        status.style.display = "block";
-        status.style.color = "white";
-        status.style.backgroundColor = color;
-      }
-
-      function loadNews() {
-        database
-          .ref("news")
-          .orderByChild("timestamp")
-          .on("value", (snapshot) => {
-            const list = document.getElementById("newsList");
-            list.innerHTML = "";
-            if (!snapshot.exists()) {
-              list.innerHTML =
-                "<p style='text-align:center; opacity:0.5;'>لا توجد أخبار</p>";
-              return;
-            }
-            let items = [];
-            snapshot.forEach((child) => {
-              items.push({ id: child.key, ...child.val() });
-            });
-            items.reverse().forEach((item) => {
-              list.innerHTML += `
-              <div class="news-item">
-                <div class="news-info">
-                  <img src="${item.img}">
-                  <span>${item.title}</span>
-                </div>
-                <button class="delete-btn" onclick="deleteNews('${item.id}')">
-                   <div class="trash-icon"></div>
-                </button>
-              </div>`;
-            });
-          });
-      }
-
-      async function deleteNews(id) {
-        if (confirm("هل أنت متأكد من الحذف؟")) {
-          await database.ref("news").child(id).remove();
-        }
-      }
-
-      loadNews();
-    </script>
+    <script src="app.js"></script>
   </body>
 </html>

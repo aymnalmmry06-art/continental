@@ -341,8 +341,40 @@ textarea:focus {
   box-shadow: 0 10px 22px rgba(49, 88, 201, 0.26);
 }
 
-.edit-btn i {
+.edit-icon {
+  width: 21px;
+  height: 21px;
+  border: 2px solid currentColor;
+  border-radius: 6px;
+  position: relative;
+  display: inline-block;
   pointer-events: none;
+}
+
+.edit-icon::before {
+  content: "";
+  width: 15px;
+  height: 5px;
+  background: currentColor;
+  border-radius: 999px;
+  position: absolute;
+  top: 6px;
+  left: 2px;
+  transform: rotate(-38deg);
+  transform-origin: center;
+}
+
+.edit-icon::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-right: 6px solid currentColor;
+  position: absolute;
+  top: 2px;
+  right: -2px;
+  transform: rotate(-38deg);
 }
 
 .delete-btn {

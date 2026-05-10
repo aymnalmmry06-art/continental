@@ -181,7 +181,7 @@ function createNewsItem(item) {
   editButton.className = "edit-btn";
   editButton.type = "button";
   editButton.title = "تعديل الخبر";
-  editButton.innerHTML = '<i class="fas fa-pen-to-square"></i>';
+  editButton.innerHTML = '<span class="edit-icon" aria-hidden="true"></span>';
   editButton.addEventListener("click", () => startEditNews(item));
 
   const deleteButton = document.createElement("button");

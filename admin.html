@@ -25,7 +25,7 @@
 
     <div class="container">
       <div class="card">
-        <h2><i class="fas fa-edit"></i> إضافة خبر جديد</h2>
+        <h2 id="formTitle"><i class="fas fa-edit"></i> إضافة خبر جديد</h2>
         <div class="form-group">
           <label>عنوان الخبر</label>
           <input type="text" id="newsTitle" placeholder="أدخل العنوان هنا..." />
@@ -72,9 +72,29 @@
             placeholder="اكتب تفاصيل الخبر هنا..."
           ></textarea>
         </div>
-        <button class="btn-publish" id="publishBtn">
-          <i class="fas fa-paper-plane"></i> نشر الآن
-        </button>
+
+        <div class="preview-card">
+          <div class="preview-label">معاينة الخبر قبل النشر</div>
+          <img
+            id="livePreviewImage"
+            src="https://via.placeholder.com/600x400?text=Continental"
+            alt="معاينة صورة الخبر"
+          />
+          <div class="preview-body">
+            <span id="livePreviewType">Company News</span>
+            <h3 id="livePreviewTitle">عنوان الخبر سيظهر هنا</h3>
+            <p id="livePreviewContent">تفاصيل الخبر ستظهر هنا أثناء الكتابة.</p>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn-publish" id="publishBtn">
+            <i class="fas fa-paper-plane"></i> نشر الآن
+          </button>
+          <button class="btn-cancel" id="cancelEditBtn" type="button">
+            إلغاء التعديل
+          </button>
+        </div>
         <div id="status"></div>
       </div>
 

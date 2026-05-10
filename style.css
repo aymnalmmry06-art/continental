@@ -169,6 +169,64 @@ textarea:focus {
   font-weight: bold;
 }
 
+.preview-card {
+  border: 1px solid #edf0f5;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fbfcff;
+  margin: 20px 0;
+}
+
+.preview-label {
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 800;
+  padding: 12px 14px;
+  border-bottom: 1px solid #edf0f5;
+}
+
+#livePreviewImage {
+  width: 100%;
+  height: 210px;
+  display: block;
+  object-fit: cover;
+  background: #eef2f8;
+}
+
+.preview-body {
+  padding: 16px;
+}
+
+#livePreviewType {
+  display: inline-block;
+  color: var(--primary);
+  background: rgba(79, 124, 255, 0.1);
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+#livePreviewTitle {
+  color: var(--bg);
+  margin: 0 0 8px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+#livePreviewContent {
+  color: #555;
+  margin: 0;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+.form-actions {
+  display: grid;
+  gap: 10px;
+}
+
 .btn-publish {
   width: 100%;
   padding: 16px;
@@ -196,6 +254,19 @@ textarea:focus {
 .btn-publish:disabled {
   cursor: wait;
   opacity: 0.75;
+}
+
+.btn-cancel {
+  display: none;
+  width: 100%;
+  padding: 14px;
+  background: #eef1f7;
+  color: var(--bg);
+  border: none;
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .manage-title {
@@ -239,6 +310,32 @@ textarea:focus {
   font-weight: 700;
   color: var(--bg);
   font-size: 1rem;
+}
+
+.news-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.edit-btn {
+  background: rgba(79, 124, 255, 0.1);
+  color: var(--primary);
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.edit-btn:hover {
+  background: var(--primary);
+  color: white;
 }
 
 .delete-btn {
